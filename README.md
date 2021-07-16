@@ -44,7 +44,7 @@
       - name: 🍰Akilarの太妃糖
         descr: 诗词歌赋
         cover: https://cdn.jsdelivr.net/npm/akilar-candyassets/image/cover6.webp
-    custom_css: https://cdn.jsdelivr.net/npm/hexo-butterfly-categorybar/lib/categorybar.css
+    custom_css: https://cdn.jsdelivr.net/npm/hexo-butterfly-categories-card/lib/categorybar.css
   ```
 3. 参数释义
 
