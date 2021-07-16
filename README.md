@@ -1,4 +1,4 @@
-# hexo-butterfly-categorybar
+# hexo-butterfly-category-card
 
 给`hexo-theme-butterfly`添加 [首页分类卡片](https://akilar.top/posts/a9131002/)
 
@@ -6,16 +6,16 @@
 
 1. 安装插件,在博客根目录`[Blogroot]`下打开终端，运行以下指令：
   ```bash
-  npm install hexo-butterfly-categorybar --save
+  npm install hexo-butterfly-category-card --save
   ```
 
 2. 添加配置信息，以下为写法示例
   在站点配置文件`_config.yml`或者主题配置文件`_config.butterfly.yml`中添加
 
   ```yaml
-  # hexo-butterfly-categorybar
+  # hexo-butterfly-category-card
   # see https://akilar.top/posts/a9131002/
-  swiper:
+  categoryBar:
     enable: true # 开关
     priority: 5 #过滤器优先权
     enable_page: / # 应用页面
