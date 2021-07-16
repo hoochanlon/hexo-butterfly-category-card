@@ -26,23 +26,17 @@
     column: odd # odd：3列 | even：4列
     row: 1 #显示行数，默认两行，超过行数切换为滚动显示
     message:
-      - name: ☕Akilarの马卡龙
-        descr: 长篇小说连载
+      - descr: 长篇小说连载
         cover: https://cdn.jsdelivr.net/npm/akilar-candyassets/image/cover1.webp
-      - name: 🍡Akilarの糖葫芦
-        descr: 杂谈教程
+      - descr: 杂谈教程
         cover: https://cdn.jsdelivr.net/npm/akilar-candyassets/image/cover2.webp
-      - name: 🍨Akilarの棉花糖
-        descr: 玩转Win10
+      - descr: 玩转Win10
         cover: https://cdn.jsdelivr.net/npm/akilar-candyassets/image/cover3.webp
-      - name: 🍫Akilarの巧克力
-        descr: Ubuntu指南
+      - descr: Ubuntu指南
         cover: https://cdn.jsdelivr.net/npm/akilar-candyassets/image/cover4.webp
-      - name: 🍬Akilarの泡泡糖
-        descr: 个人日记
+      - descr: 个人日记
         cover: https://cdn.jsdelivr.net/npm/akilar-candyassets/image/cover5.webp
-      - name: 🍰Akilarの太妃糖
-        descr: 诗词歌赋
+      - descr: 诗词歌赋
         cover: https://cdn.jsdelivr.net/npm/akilar-candyassets/image/cover6.webp
     custom_css: https://cdn.jsdelivr.net/npm/hexo-butterfly-categories-card/lib/categorybar.css
   ```
@@ -58,9 +52,8 @@
   |layout.index|0和正整数|【可选】前提是layout.type为class，因为同一页面可能有多个class，此项用来确认究竟排在第几个顺位|
   |column|odd/even|【可选】显示列数，考虑到比例问题，只提供3列和4列，odd为3列， even为4列|
   |row|number|【可选】显示行数，默认两行，超过行数切换为滚动显示|
-  |message.name|text|分类名称，需要和你自己的文章分类一一对应，排序原理就是根据你在此写的分类名进行排序，未写入的就不会显示。|
-  |message.descr|text|分类描述|
-  |message.cover|url|分类背景|
+  |message.descr|text|分类描述,需要和你自己的文章分类一一对应。|
+  |message.cover|url|分类背景,需要和你自己的文章分类一一对应。|
   |custom_css|url|【可选】自定义样式，会替换默认的css链接，可以下载文档给出的cdn链接后自主修改|
 
 # 截图

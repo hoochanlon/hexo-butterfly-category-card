@@ -8,21 +8,27 @@ const urlFor = require('hexo-util').url_for.bind(hexo)
 const util = require('hexo-util')
 
 hexo.extend.filter.register('after_generate', function () {
-  // 获取所有分类
-  var categories_list= hexo.locals.get('categories').data;
+
 // =====================================================================
   // 首先获取整体的配置项名称
   const config = hexo.config.categoryBar || hexo.theme.config.categoryBar
   // 如果配置开启
   if (!(config && config.enable)) return
+    // 获取所有分类
+    var categories_list= hexo.locals.get('categories').data;
+    var categories_message= config.message;
+    var new_categories_list = [];
+    for(i=0,i<categories_list.length,i++){
+      new_categories_list.push(categories_list[i].push(categories_message[i]))
+    }
+    console.log(new_categories_list)
   // 集体声明配置项
     const data = {
       enable_page: config.enable_page ? config.enable_page : "/",
       layout_type: config.layout.type,
       layout_name: config.layout.name,
       layout_index: config.layout.index ? config.layout.index : 0,
-      categories_list: categories_list,
-      categories_message: config.message,
+      categories_list: new_categories_list,
       column: config.column ? config.column : odd, // odd：3列 | even：4列
       row: config.row ? config.row : 2, //显示行数，默认两行，超过行数切换为滚动显示
       custom_css: config.custom_css ? urlFor(config.custom_css) : "https://cdn.jsdelivr.net/npm/hexo-butterfly-categories-card/lib/categorybar.css"

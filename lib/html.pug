@@ -9,17 +9,15 @@ else if (column === 'even')
 .recent-post-item.photo-tag(style='width:100%;height:auto;')
   #catalogMagnet
     each cl in categories_list
-      each cm in categories_message
-        if (cl.name === cm.name)
-          figure.gallery-group.color-card
-            img.gallery-group-img.loaded(src=cm.cover alt='' data-ll-status='loaded')
-            figcaption
-              .gallery-group-name.magnetname
-                span |
-                a(href=cl.path)= cl.name
-              li.category-list-item
-                span.category-list-count
-                  i.fas.fa-book
-                  span= cl.length          
-              p= cm.descr
-              a(href=cl.path)
+      figure.gallery-group.color-card
+        img.gallery-group-img.loaded(src=cl.cover alt='' data-ll-status='loaded')
+        figcaption
+          .gallery-group-name.magnetname
+            span |
+            a(href=cl.path)= cl.name
+          li.category-list-item
+            span.category-list-count
+              i.fas.fa-book
+              span= cl.length          
+          p= cl.descr
+          a(href=cl.path)
