@@ -2,21 +2,21 @@
 - var mrow = 160 * row + 'px'
 if (column === 'odd')
   style.
-    figure .color-card{width: 32.3%!important;height: 180px!important;margin: 5px 0.5%!important;}div#catalogMagnet{max-height: #{prow};overflow: auto;}div#catalogMagnet::-webkit-scrollbar{width: 0!important;}@media screen and (max-width: 650px){div#catalogMagnet{max-height: #{mrow};}
+    figure.color-card{width: 32.3%!important;height: 180px!important;margin: 5px 0.5%!important;}div#catalogMagnet{max-height: #{prow};overflow: auto;}div#catalogMagnet::-webkit-scrollbar{width: 0!important;}@media screen and (max-width: 650px){div#catalogMagnet{max-height: #{mrow};}}
 else if (column === 'even')
   style.
-    figure .color-card{width: 24%!important;height: 180px!important;margin: 5px 0.5%!important;}div#catalogMagnet{max-height: #{prow};overflow: auto;}div#catalogMagnet::-webkit-scrollbar{width: 0!important;}@media screen and (max-width: 650px){div#catalogMagnet{max-height: #{mrow};}
+    figure.color-card{width: 24%!important;height: 180px!important;margin: 5px 0.5%!important;}div#catalogMagnet{max-height: #{prow};overflow: auto;}div#catalogMagnet::-webkit-scrollbar{width: 0!important;}@media screen and (max-width: 650px){div#catalogMagnet{max-height: #{mrow};}}
 .recent-post-item.photo-tag(style='width:100%;height:auto;float:left;padding:5px;flex-wrap:wrap;justify-content : center;flex-direction: row;')
   #catalogMagnet
     each cl in categories_list
       each cm in categories_message
         if (cl.name === cm.name)
           figure.gallery-group.color-card
-            img.gallery-group-img.loaded(src=cm.cover) alt='' data-ll-status='loaded')
+            img.gallery-group-img.loaded(src=cm.cover alt='' data-ll-status='loaded')
             figcaption
               .gallery-group-name.magnetname
                 span |
-                a(href=cl.path))= cl.name
+                a(href=cl.path)= cl.name
               li.category-list-item
                 span.category-list-count
                   i.fas.fa-book
