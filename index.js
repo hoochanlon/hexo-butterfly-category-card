@@ -1,6 +1,6 @@
 'use strict'
 // 全局声明插件代号
-const pluginname = 'butterfly_categorybar'
+const pluginname = 'butterfly_categories_card'
 // 全局声明依赖
 const pug = require('pug')
 const path = require('path')
@@ -25,7 +25,7 @@ hexo.extend.filter.register('after_generate', function () {
       categories_message: config.message,
       column: config.column ? config.column : odd, // odd：3列 | even：4列
       row: config.row ? config.row : 2, //显示行数，默认两行，超过行数切换为滚动显示
-      custom_css: config.custom.css ? urlFor(config.custom.css) : "https://cdn.jsdelivr.net/npm/hexo-butterfly-categorybar/lib/categorybar.css"
+      custom_css: config.custom_css ? urlFor(config.custom_css) : "https://cdn.jsdelivr.net/npm/hexo-butterfly-categories-card/lib/categorybar.css"
     }
   // 渲染页面
   const temple_html_text = config.temple_html ? config.temple_html : pug.renderFile(path.join(__dirname, './lib/html.pug'),data);

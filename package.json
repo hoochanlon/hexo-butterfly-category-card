@@ -1,7 +1,7 @@
 {
   "name": "hexo-butterfly-categories-card",
-  "version": "0.0.2",
-  "description": "A Slideshow  plugin for theme-butterfly based on swiper",
+  "version": "0.0.3",
+  "description": "A categories card plugin for theme-butterfly",
   "main": "index.js",
   "scripts": {
     "eslint": "eslint ."
@@ -15,9 +15,8 @@
   ],
   "keywords": [
     "hexo",
-    "renderer",
-    "swiper",
-    "Slideshow",
+    "filter",
+    "cotegotise card",
     "butterfly",
     "theme-butterfly",
     "plugins"
@@ -29,6 +28,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Akilarlxh/hexo-butterfly-cotegotise-bar.git"
+    "url": "https://github.com/Akilarlxh/hexo-butterfly-categories-card.git"
   }
 }
