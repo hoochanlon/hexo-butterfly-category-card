@@ -1,0 +1,42 @@
+
+#catalogMagnet
+  .category-list-count
+    font-weight bold
+    &:after
+      content ' 篇'
+
+  .fa-book
+    padding-right 5px
+
+  .category-list-item
+    list-style-type none
+
+  figure
+    &.gallery-group
+      p
+        font-weight bold
+
+  @media screen and (max-width: 650px)
+   .color-card
+    width: 48%!important
+    height: 150px!important
+    margin: 0.3rem 1%!important
+
+  .magnetname:after
+    background white!important
+
+  figure
+    .gallery-group
+      &.color-card
+        box-shadow rgba(50, 50, 50, 0.4) 3px 3px 18px 0px inset
+  figcaption
+    background-image linear-gradient(rgba(0, 0, 0, 0.4) 25%, rgba(16, 16, 16, 0) 100%)
+    color white
+    padding 0.8rem
+  & > figure
+    & > figcaption
+      & > div
+        & > a
+        & > span
+          color white
+          font-size 1rem!important
