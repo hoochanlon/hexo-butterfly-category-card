@@ -7,10 +7,10 @@ else if (column === 'even')
   style.
     figure.color-card{width: 24%!important;height: 180px!important;margin: 5px 0.5%!important;}div#catalogMagnet{max-height: #{prow};overflow: auto;}div#catalogMagnet::-webkit-scrollbar{width: 0!important;}@media screen and (max-width: 650px){div#catalogMagnet{max-height: #{mrow};}}
 .recent-post-item.photo-tag(style='width:100%;height:auto;')
-  #catalogMagnet
+  #catalogMagnet(style='width:100%;height:auto;')
     each cl in categories_list
       figure.gallery-group.color-card
-        img.gallery-group-img.loaded(src=cl.cover alt='' data-ll-status='loaded')
+        img.gallery-group-img(src=cl.cover alt='')
         figcaption
           .gallery-group-name.magnetname
             span |
