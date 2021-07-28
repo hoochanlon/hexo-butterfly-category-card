@@ -17,11 +17,15 @@ hexo.extend.filter.register('after_generate', function () {
     // 获取所有分类
     var categories_list= hexo.locals.get('categories').data;
     var categories_message= config.message;
+    //声明一个空数组用来存放合并后的对象
     var new_categories_list = [];
-    for(i=0,i<categories_list.length,i++){
-      new_categories_list.push(categories_list[i].push(categories_message[i]))
-    }
-    console.log(new_categories_list)
+    // 合并分类属性和新添加的封面描述属性
+    for(var i=0;i<categories_list.length;i++){
+      var a = categories_list[i]
+      var b = categories_message[i]
+      new_categories_list[i] = Object.assign(a,b)
+      }
+    // console.log(new_categories_list)
   // 集体声明配置项
     const data = {
       enable_page: config.enable_page ? config.enable_page : "/",
