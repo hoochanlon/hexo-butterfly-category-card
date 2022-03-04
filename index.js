@@ -28,6 +28,7 @@ hexo.extend.filter.register('after_generate', function () {
     // console.log(new_categories_list)
   // 集体声明配置项
     const data = {
+      pjaxenable: hexo.theme.config.pjax.enable,
       enable_page: config.enable_page ? config.enable_page : "/",
       layout_type: config.layout.type,
       layout_name: config.layout.name,

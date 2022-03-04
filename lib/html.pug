@@ -1,23 +1,24 @@
 - var prow = 190 * row + 'px'
 - var mrow = 160 * row + 'px'
+
 if (column === 'odd')
   style.
-    figure.color-card{width: 32.3%!important;height: 180px!important;margin: 5px 0.5%!important;}div#catalogMagnet{max-height: #{prow};overflow: auto;}div#catalogMagnet::-webkit-scrollbar{width: 0!important;}@media screen and (max-width: 650px){div#catalogMagnet{max-height: #{mrow};}}
+    li.categoryBar-list-item{width:32.3%;}.categoryBar-list{max-height: #{prow};overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: #{mrow};}}
 else if (column === 'even')
   style.
-    figure.color-card{width: 24%!important;height: 180px!important;margin: 5px 0.5%!important;}div#catalogMagnet{max-height: #{prow};overflow: auto;}div#catalogMagnet::-webkit-scrollbar{width: 0!important;}@media screen and (max-width: 650px){div#catalogMagnet{max-height: #{mrow};}}
-.recent-post-item.photo-tag(style='width:100%;height:auto;')
-  #catalogMagnet(style='width:100%;height:auto;')
-    each cl in categories_list
-      figure.gallery-group.color-card
-        img.no-lightbox.gallery-group-img(src=cl.cover alt='')
-        figcaption
-          .gallery-group-name.magnetname
-            span |
-            a(href=cl.path)= cl.name
-          li.category-list-item
-            span.category-list-count
-              i.fas.fa-book
-              span= cl.length          
-          p= cl.descr
-          a(href=cl.path)
+    li.categoryBar-list-item{width:24%;}.categoryBar-list{max-height: #{prow};overflow:auto;}.categoryBar-list::-webkit-scrollbar{width:0!important}@media screen and (max-width: 650px){.categoryBar-list{max-height: #{mrow};}}
+.recent-post-item(style='height:auto;width:100%;padding:0px;')
+  #categoryBar
+    ul.categoryBar-list
+      if pjaxenable
+        each cl in categories_list
+          li.categoryBar-list-item(style=`background:url(` + cl.cover + `);`)  
+            a.categoryBar-list-link(onclick=`pjax.loadUrl("` + cl.path + `");` href='javascript:void(0);'  )= cl.name
+            span.categoryBar-list-count= cl.length
+            span.categoryBar-list-descr= cl.descr
+      else
+        each cl in categories_list
+          li.categoryBar-list-item(style=`background:url(` + cl.cover + `);`)  
+            a.categoryBar-list-link(href=cl.path)= cl.name
+            span.categoryBar-list-count= cl.length
+            span.categoryBar-list-descr= cl.descr

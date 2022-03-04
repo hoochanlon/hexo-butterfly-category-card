@@ -26,19 +26,19 @@
     column: odd # odd：3列 | even：4列
     row: 1 #显示行数，默认两行，超过行数切换为滚动显示
     message:
-      - descr: 长篇小说连载
-        cover: https://cdn.jsdelivr.net/npm/akilar-candyassets/image/cover1.webp
-      - descr: 杂谈教程
-        cover: https://cdn.jsdelivr.net/npm/akilar-candyassets/image/cover2.webp
-      - descr: 玩转Win10
-        cover: https://cdn.jsdelivr.net/npm/akilar-candyassets/image/cover3.webp
       - descr: Ubuntu指南
-        cover: https://cdn.jsdelivr.net/npm/akilar-candyassets/image/cover4.webp
+        cover: https://npm.elemecdn.com/akilar-candyassets/image/cover1.webp
+      - descr: 玩转Win10
+        cover: https://npm.elemecdn.com/akilar-candyassets/image/cover2.webp
+      - descr: 长篇小说连载
+        cover: https://npm.elemecdn.com/akilar-candyassets/image/cover3.webp
       - descr: 个人日记
-        cover: https://cdn.jsdelivr.net/npm/akilar-candyassets/image/cover5.webp
+        cover: https://npm.elemecdn.com/akilar-candyassets/image/cover4.webp
       - descr: 诗词歌赋
-        cover: https://cdn.jsdelivr.net/npm/akilar-candyassets/image/cover6.webp
-    custom_css: https://cdn.jsdelivr.net/npm/hexo-butterfly-categories-card/lib/categorybar.css
+        cover: https://npm.elemecdn.com/akilar-candyassets/image/cover5.webp
+      - descr: 杂谈教程
+        cover: https://npm.elemecdn.com/akilar-candyassets/image/cover6.webp
+    custom_css: https://npm.elemecdn.com/hexo-butterfly-categories-card/lib/categorybar.css
   ```
 3. 参数释义
 
@@ -57,4 +57,16 @@
   |custom_css|url|【可选】自定义样式，会替换默认的css链接，可以下载文档给出的cdn链接后自主修改|
 
 # 截图
-![](https://cdn.jsdelivr.net/npm/akilar-candyassets/image/af2f14fe.png)
+![](https://npm.elemecdn.com/akilar-candyassets/image/af2f14fe.png)
+
+# 更新记录
+- 2022-03-04：1.0.0
+  1. 弃用3.0方案，冰老师的原始布局与figure标签样式严重耦合。
+  2. 沿用4.0方案，将自适应样式与配置关联。
+  3. 列数样式整合进html.pug，用户无法再通过配置项以外的方式调整行数。
+  4. 调用pjax.loadURL()方法实现不间断跳转，兼容aplayer全局音乐。
+  5. 卡片链接、名称通过index.js直接生成，需要用户自行根据生成后的卡片添加描述和封面。
+- 2022-03-03：0.0.11
+  1. 初步修复样式bug，等待调整自适应样式
+- 2021-08-25：0.0.10
+  1. 沿用源码修改方案3.0版本，初步实现界面挂载
