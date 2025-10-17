@@ -13,12 +13,22 @@ else if (column === 'even')
       if pjaxenable
         each cl in categories_list
           li.categoryBar-list-item(style=`background:url(` + cl.cover + `);`)  
-            a.categoryBar-list-link(onclick=`pjax.loadUrl("` + cl.path + `");` href='javascript:void(0);'  )= cl.name
+            //- 强制修正路径：移除重复的 categories 前缀
+            - var cleanPath = cl.path.replace(/^\/?categories\//, '')
+            a.categoryBar-list-link(
+              onclick=`pjax.loadUrl("/categories/${cleanPath}");`
+              href='javascript:void(0);'
+            )= cl.name
             span.categoryBar-list-count= cl.length
-            span.categoryBar-list-descr= cl.descr
+            //- span.categoryBar-list-descr= cl.descr
       else
         each cl in categories_list
           li.categoryBar-list-item(style=`background:url(` + cl.cover + `);`)  
-            a.categoryBar-list-link(href=cl.path)= cl.name
+            //- 直接输出修正后的路径
+            - var cleanPath = cl.path.replace(/^\/?categories\//, '')
+            a.categoryBar-list-link(href=`/categories/${cleanPath}`)= cl.name
             span.categoryBar-list-count= cl.length
-            span.categoryBar-list-descr= cl.descr
+            //- span.categoryBar-list-descr= cl.descr
+
+
+
