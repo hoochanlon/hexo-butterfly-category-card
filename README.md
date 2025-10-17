@@ -1,4 +1,18 @@
-# hexo-butterfly-categories-card
+# hexo-butterfly-categories-card-fork
+
+虽然可以通过 hexo d 正常部署，但由于我使用了 GitHub Actions 进行自动化部署，流程中的 npm install 会重新拉取依赖，从而覆盖我本地对插件源代码的修改。鉴于原插件作者已长期未更新，我选择复制原版代码并进行适度微调，以便自用和后续维护。
+
+* 本包为 hexo-butterfly-categories-card 的复制版本，基于原作者的结构进行调整
+* 移除了分类卡片底部文字的滑动显示效果
+* 修复了网页中分类目录重复的问题
+* 参考链接：
+    * [akilar - 首页分类卡片](https://akilar.top/posts/a9131002/)
+    * [kukual - butterfly主题魔改10：分类页面魔改](https://kukual.github.io/posts/a7bebfb0/index.html)
+    * [ll.sc.cn -【butterfly】分类磁贴插件版](https://ll.sc.cn/posts/ab72/)
+
+个人的butterfly主题魔改也参考了大量[akilar](https://github.com/Akilarlxh) 的文章，再次感谢该插件原作者[akilar](https://github.com/Akilarlxh) 
+
+---
 
 给`hexo-theme-butterfly`添加 [首页分类卡片](https://akilar.top/posts/a9131002/)
 
