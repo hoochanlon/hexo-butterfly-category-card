@@ -12,6 +12,8 @@
 
 个人的butterfly主题魔改也参考了大量[akilar](https://github.com/Akilarlxh) 的文章，再次感谢该插件原作者[akilar](https://github.com/Akilarlxh) 
 
+注：需引入font-awesome6.5 `<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">`
+
 ---
 
 给`hexo-theme-butterfly`添加 [首页分类卡片](https://akilar.top/posts/a9131002/)
