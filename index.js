@@ -20,11 +20,13 @@ hexo.extend.filter.register('after_generate', function () {
     //声明一个空数组用来存放合并后的对象
     var new_categories_list = [];
     // 合并分类属性和新添加的封面描述属性
-    for(var i=0;i<categories_list.length;i++){
-      var a = categories_list[i]
-      var b = categories_message[i]
-      new_categories_list[i] = Object.assign(a,b)
-      }
+    // 合并分类属性和新添加的封面描述属性
+    for (var i = 0; i < categories_list.length; i++) {
+      var a = categories_list[i];
+      var b = categories_message[i];
+      // 确保不覆盖原分类路径
+      new_categories_list[i] = Object.assign({}, a, { path: a.path }, b);
+    }
     // console.log(new_categories_list)
   // 集体声明配置项
     const data = {
@@ -62,16 +64,27 @@ hexo.extend.filter.register('after_generate', function () {
   }
 
   //挂载容器脚本
+  //挂载容器脚本（动态创建容器）
   var user_info_js = `<script data-pjax>
-    function ${pluginname}_injector_config(){
-      var parent_div_git = ${get_layout};
-      var item_html = '${temple_html_text}';
-      console.log('已挂载${pluginname}')
-      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
-      }
-    if( ${get_layout} && (location.pathname ==='${data.enable_page}'|| '${data.enable_page}' ==='all')){
-    ${pluginname}_injector_config()
+  function ${pluginname}_injector_config(){
+    // 检查容器是否存在
+    var parent_div_git = ${get_layout};
+    // 如果容器不存在，则动态创建
+    if (!parent_div_git) {
+      console.warn('${pluginname}: 挂载容器不存在，正在动态创建...');
+      // 创建新容器（默认插入到页面主体顶部）
+      parent_div_git = document.createElement('div');
+      parent_div_git.id = '${data.layout_name}'; // 赋予配置的ID
+      document.querySelector('#page').prepend(parent_div_git); // 插入到 #content-inner 内
     }
+    var item_html = '${temple_html_text}';
+    console.log('已挂载 ${pluginname}');
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+  }
+  // 路径匹配逻辑（使用 startsWith）
+  if (location.pathname.startsWith('${data.enable_page}') || '${data.enable_page}' === 'all') {
+    ${pluginname}_injector_config();
+  }
   </script>`
   // 注入用户脚本
   // 此处利用挂载容器实现了二级注入
@@ -86,3 +99,4 @@ hexo.extend.helper.register('priority', function(){
   return priority
 })
 )
+
