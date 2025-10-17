@@ -3,7 +3,7 @@ name: Publish Package to npmjs
 on:
   push:
     branches:
-      - main   # 触发分支，可以根据你仓库实际分支改
+      - master  # 触发分支，可以根据你仓库实际分支改
 
 jobs:
   publish:
