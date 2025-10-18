@@ -27,12 +27,15 @@
 >  [!TIP]
 > 使用该项目需提前引入font-awesome6.5，以及安装 tiny-pinyin
 >
-> 主题配置引入：`<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">`
->
+> 主题配置引入：
+> ```
+> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+>```
+> 
 > 博客根目录：`npm install  tiny-pinyin`
 
 
-安装插件,在博客根目录`[Blogroot]`下打开终端，运行以下指令：
+1. 安装插件,在博客根目录下打开终端，运行以下指令：
 
 ```
 npm install hexo-butterfly-category-card-fork --save
