@@ -1,4 +1,4 @@
-## 缘起
+# hexo-butterfly-category-card-fork
 
 主要是分类目录重复的问题：https://github.com/Akilarlxh/hexo-butterfly-category-card/issues/1 。虽然可以通过 hexo d 正常部署，但由于我使用了 GitHub Actions 进行自动化部署，流程中的 npm install 会重新拉取依赖，从而覆盖我本地对插件源代码的修改，生成网页部署 gh-pages 也不方便了。鉴于原插件作者已长期未更新，我选择复制原版代码并进行适度微调，以便自用和后续维护。
 
@@ -16,7 +16,7 @@
 ## 修复方案
 
 卡片分类随机、描述与封面图不对应被打乱解法。
-. 
+
 1. 先对分类进行拼音排序
 1. 将描述和封面图绑定在一起，视为一个整体
 1. 注册分类名作为可配置项，以分类名作为标识符，绑定描述和封面图
@@ -24,23 +24,13 @@
 
 ## 使用方法
 
-### ZERO
+>  [!TIP]
+> 使用该项目需提前引入font-awesome6.5，以及安装 tiny-pinyin
+>
+> 主题配置引入：`<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">`
+>
+> 博客根目录：`npm install  tiny-pinyin`
 
-使用该项目提前引入font-awesome6.5，以及安装 tiny-pinyin
-
- font-awesome6.5
-
-```
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-```
-
- tiny-pinyin
-
-```
-npm install  tiny-pinyin
-```
-
-### ONE
 
 安装插件,在博客根目录`[Blogroot]`下打开终端，运行以下指令：
 
