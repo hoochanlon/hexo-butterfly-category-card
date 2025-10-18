@@ -20,7 +20,7 @@ else if (column === 'even')
               href='javascript:void(0);'
             )= cl.name
             span.categoryBar-list-count= cl.length
-            //- span.categoryBar-list-descr= cl.descr
+            span.categoryBar-list-descr= cl.descr
       else
         each cl in categories_list
           li.categoryBar-list-item(style=`background:url(` + cl.cover + `);`)  
@@ -28,7 +28,7 @@ else if (column === 'even')
             - var cleanPath = cl.path.replace(/^\/?categories\//, '')
             a.categoryBar-list-link(href=`/categories/${cleanPath}`)= cl.name
             span.categoryBar-list-count= cl.length
-            //- span.categoryBar-list-descr= cl.descr
+            span.categoryBar-list-descr= cl.descr
 
 
 
