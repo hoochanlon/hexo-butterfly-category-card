@@ -1,6 +1,6 @@
 {
   "name": "hexo-butterfly-category-card-fork",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "A categories card plugin for theme-butterfly",
   "main": "index.js",
   "scripts": {
