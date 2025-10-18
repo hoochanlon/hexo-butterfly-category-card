@@ -24,7 +24,7 @@
 
 ## 使用方法
 
->  [!TIP]
+>  [!important]
 > 使用该项目需提前引入font-awesome6.5，以及安装 tiny-pinyin
 >
 > 主题配置引入：
@@ -41,7 +41,7 @@
 npm install hexo-butterfly-category-card-fork --save
 ```
 
-主题配置文件 `_config.butterfly.yml` 中添加
+主题配置文件 `_config.butterfly.yml` 中添加如下代码，`cname` 填你的分类名。
 
 ```
 # hexo-butterfly-categories-card
@@ -77,6 +77,13 @@ categoryBar:
       cover: https://images.pexels.com/photos/531756/pexels-photo-531756.jpeg 
   custom_css: https://npm.elemecdn.com/hexo-butterfly-categories-card/lib/categorybar.css
 ```
+
+> [!tip]
+> 在自定义css文件中，加入以下代码,将原分类显示隐藏：`#content-inner #page .category-lists {display: none;}`
+> 
+> 来源：[【butterfly】分类磁贴插件版- 守正](https://ll.sc.cn/posts/ab72/)
+
+
 
 ## 效果
 
