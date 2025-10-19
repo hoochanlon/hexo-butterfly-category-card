@@ -20,7 +20,7 @@
 
 1. 先对分类进行拼音排序
 1. 将描述和封面图绑定在一起，视为一个整体
-1. 注册分类名作为可配置项，以分类名作为标识符，绑定描述和封面图
+1. 注册分类名`cname`作为可配置项，以分类名作为标识符，绑定描述和封面图
 
 
 ## 使用方法及效果演示
@@ -51,6 +51,7 @@ npm install hexo-butterfly-category-card-fork --save
 ```
 
 【2】在 `_config.butterfly.yml` 添加如下代码，`cname` 填你的分类名。
+> 更多相关参数说明，见原版：https://github.com/Akilarlxh/hexo-butterfly-category-card
 
 ```yml
 # hexo-butterfly-categories-card
@@ -126,4 +127,3 @@ document.addEventListener("DOMContentLoaded", function() {
 </details>
 
 
-更多参数见原版：https://github.com/Akilarlxh/hexo-butterfly-category-card
