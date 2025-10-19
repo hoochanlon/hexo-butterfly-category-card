@@ -1,21 +1,22 @@
 # hexo-butterfly-category-card-fork
 
-主要是分类目录重复的问题：https://github.com/Akilarlxh/hexo-butterfly-category-card/issues/1 。虽然可以通过 hexo d 正常部署，但由于我使用了 GitHub Actions 进行自动化部署，流程中的 npm install 会重新拉取依赖，从而覆盖我本地对插件源代码的修改，生成网页部署 gh-pages 也不方便了。鉴于原插件作者已长期未更新，我选择复制原版代码并进行适度微调，以便自用和后续维护。
+>  [!important]
+> 主要是分类目录重复的问题：https://github.com/Akilarlxh/hexo-butterfly-category-card/issues/1 。虽然可以通过 hexo d 正常部署，但由于我使用了 GitHub Actions 进行自动化部署，流程中的 npm install 会重新拉取依赖，从而覆盖我本地对插件源代码的修改，生成网页部署 gh-pages 也不方便了。鉴于原插件作者已长期未更新，我选择复制原版代码并进行适度微调，以便自用和后续维护。
+> 
+> 我个人的博客 butterfly 主题在功能上的修改，不少也是参考了原插件作者的文章，再次感谢[akilar](https://github.com/Akilarlxh) 
 
-* 本包为 hexo-butterfly-categories-card 的复制版本，基于原作者的结构进行调整
+
+该 repo 为 hexo-butterfly-categories-card 的复制版本，基于原作者的结构进行调整
 * 修复了网页中分类目录重复的问题
 * 修复了分类卡片描述、封面图不对应的问题
-* 剔除了生成子分类
+* 剔除了生成子分类卡片
 * 参考链接：
     * [akilar - 首页分类卡片](https://akilar.top/posts/a9131002/)
     * [kukual - butterfly主题魔改10：分类页面魔改](https://kukual.github.io/posts/a7bebfb0/index.html)
     * [ll.sc.cn -【butterfly】分类磁贴插件版](https://ll.sc.cn/posts/ab72/)
 
-个人的butterfly主题魔改也是参考了大量[akilar](https://github.com/Akilarlxh) 的文章，再次感谢该插件原作者[akilar](https://github.com/Akilarlxh) 
 
-## 修复方案
-
-卡片分类随机、描述与封面图不对应被打乱解法。
+针对卡片分类随机、描述与封面图不对应被打乱的修复方案
 
 1. 先对分类进行拼音排序
 1. 将描述和封面图绑定在一起，视为一个整体
@@ -24,8 +25,8 @@
 
 ## 使用方法
 
->  [!important]
-> 使用该项目需提前引入font-awesome6.5，以及安装 tiny-pinyin
+>  [!note]
+> **使用该项目需提前引入font-awesome6.5，以及安装 tiny-pinyin**
 >
 > 主题配置引入：
 > ```
@@ -34,14 +35,19 @@
 > 
 > 博客根目录：`npm install  tiny-pinyin`
 
+【0】已安装原版插件，需先卸载原版
 
-1. 安装插件,在博客根目录下打开终端，运行以下指令：
+```
+npm uninstall hexo-butterfly-categories-card
+```
+
+【1】安装插件,在博客根目录下打开终端，运行以下指令：
 
 ```
 npm install hexo-butterfly-category-card-fork --save
 ```
 
-主题配置文件 `_config.butterfly.yml` 中添加如下代码，`cname` 填你的分类名。
+【2】在 `_config.butterfly.yml` 添加如下代码，`cname` 填你的分类名。
 
 ```
 # hexo-butterfly-categories-card
@@ -79,10 +85,11 @@ categoryBar:
 ```
 
 > [!tip]
-> 在自定义css文件中，加入以下代码,将原分类显示隐藏：`#content-inner #page .category-lists {display: none;}`
+> 在自定义css文件中，加入以下代码,将原分类显示隐藏：
+>
+> `#content-inner #page .category-lists {display: none;}`
 > 
 > 来源：[【butterfly】分类磁贴插件版- 守正](https://ll.sc.cn/posts/ab72/)
-
 
 
 ## 效果
