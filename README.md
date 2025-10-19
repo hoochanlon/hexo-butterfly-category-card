@@ -23,17 +23,20 @@
 1. 注册分类名作为可配置项，以分类名作为标识符，绑定描述和封面图
 
 
-## 使用方法
+## 使用方法及效果演示
 
 >  [!note]
 > **使用该项目需提前引入font-awesome6.5，以及安装 tiny-pinyin**
 >
-> 主题配置引入：
+> 主题配置引入见：https://butterfly.js.org/posts/4aa8abbe/?highlight=inject#Inject
 > ```
 > <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 >```
 > 
-> 博客根目录：`npm install  tiny-pinyin`
+> 博客根目录：
+> ```
+> npm install  tiny-pinyin
+> ```
 
 【0】已安装原版插件，需先卸载原版
 
@@ -49,7 +52,7 @@ npm install hexo-butterfly-category-card-fork --save
 
 【2】在 `_config.butterfly.yml` 添加如下代码，`cname` 填你的分类名。
 
-```
+```yml
 # hexo-butterfly-categories-card
 # see https://akilar.top/posts/a9131002/
 categoryBar:
@@ -84,17 +87,43 @@ categoryBar:
   custom_css: https://npm.elemecdn.com/hexo-butterfly-categories-card/lib/categorybar.css
 ```
 
-> [!tip]
-> 在自定义css文件中，加入以下代码,将原分类显示隐藏：
->
-> `#content-inner #page .category-lists {display: none;}`
-> 
-> 来源：[【butterfly】分类磁贴插件版- 守正](https://ll.sc.cn/posts/ab72/)
-
-
-## 效果
+效果如下
 
 ![ ](https://tu.zbhz.org/i/2025/10/18/vfa9ub.jpg)
+
+
+## 最后
+
+> [!tip]
+> 【[【butterfly】分类磁贴插件版- 守正](https://ll.sc.cn/posts/ab72/)】在自定义css文件中，加入以下代码,将原分类显示隐藏：
+>
+> `#content-inner #page .category-lists {display: none;}`
+>
+> 由于`.category-lists`被隐藏会导致统计图取不到数值，我的方案是自定义一个js先取值后隐藏。
+
+<details>
+
+<summary>categorybar_categorieschart.js</summary>
+
+```js
+document.addEventListener("DOMContentLoaded", function() {
+  // 获取元素
+  const chart = document.getElementById('tiantianquan-categories');
+  const bar = document.getElementById('categoryBar');
+  const categoryLists = document.querySelector('.category-lists');
+
+  // 1️⃣ 移动 chart 到 categoryBar 上方
+  if (chart && bar && bar.parentNode) {
+    bar.parentNode.insertBefore(chart, bar);
+  }
+
+  // 2️⃣ 隐藏整个 category-lists 容器
+  if (categoryLists) {
+    categoryLists.style.display = 'none';
+  }
+});
+```
+</details>
 
 
 更多参数见原版：https://github.com/Akilarlxh/hexo-butterfly-category-card
