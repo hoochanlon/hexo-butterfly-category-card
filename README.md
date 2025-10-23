@@ -1,4 +1,4 @@
-# hexo-butterfly-category-card-fork
+# hexo-butterfly-category-card
 
 >  [!important]
 > 主要是分类目录重复的问题：https://github.com/Akilarlxh/hexo-butterfly-category-card/issues/1 。虽然可以通过 hexo d 正常部署，但由于我使用了 GitHub Actions 进行自动化部署，流程中的 npm install 会重新拉取依赖，从而覆盖我本地对插件源代码的修改，生成网页部署 gh-pages 也不方便了。鉴于原插件作者已长期未更新，我选择复制原版代码并进行适度微调，以便自用和后续维护。
@@ -47,7 +47,7 @@ npm uninstall hexo-butterfly-categories-card
 【1】安装插件,在博客根目录下打开终端，运行以下指令：
 
 ```
-npm install hexo-butterfly-category-card-fork --save
+npm install hexo-butterfly-category-card --save
 ```
 
 【2】在 `_config.butterfly.yml` 添加如下代码，`cname` 填你的分类名。
